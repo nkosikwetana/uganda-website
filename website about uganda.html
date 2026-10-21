@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uganda: The Pearl of Africa | Created by Nkosi Kwetana</title>
+    <style>
+        :root {
+            --primary-green: #1b4332;
+            --secondary-green: #2d6a4f;
+            --accent-yellow: #ffb703;
+            --accent-orange: #fb8500;
+            --bg-color: #f8f9fa;
+            --text-color: #2b2d42;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.7;
+            scroll-behavior: smooth;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: var(--primary-green);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav .logo {
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: var(--accent-yellow);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1.2rem;
+            margin: 0;
+            padding: 0;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 0.95rem;
+        }
+
+        nav a:hover {
+            color: var(--accent-yellow);
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary-green), var(--secondary-green));
+            color: white;
+            text-align: center;
+            padding: 6rem 2rem;
+            border-bottom: 6px solid var(--accent-yellow);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 3.5rem;
+            letter-spacing: 1px;
+        }
+
+        header p {
+            font-size: 1.4rem;
+            color: var(--accent-yellow);
+            font-weight: 500;
+            margin-top: 0.5rem;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: -2rem auto 3rem auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Cards */
+        .card {
+            background: #ffffff;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+            border-top: 4px solid var(--primary-green);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+        }
+
+        .card h2 {
+            color: var(--primary-green);
+            margin-top: 0;
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Highlights Grid */
+        .highlights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .highlight-item {
+            background: #f1faee;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 5px solid var(--accent-yellow);
+        }
+
+        .highlight-item h3 {
+            margin: 0 0 0.5rem 0;
+            color: var(--primary-green);
+            font-size: 1.2rem;
+        }
+
+        .highlight-item p {
+            margin: 0;
+            font-size: 0.95rem;
+            color: #495057;
+        }
+
+        /* Gallery Grid */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .photo-box {
+            background: #e9ecef;
+            height: 180px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6c757d;
+            font-size: 0.9rem;
+            border: 2px dashed #ced4da;
+            text-align: center;
+            padding: 1rem;
+            transition: background 0.3s;
+        }
+
+        .photo-box:hover {
+            background: #dee2e6;
+            color: var(--primary-green);
+            border-color: var(--accent-yellow);
+        }
+
+        /* Interactive Fun Facts Button Section */
+        .fact-container {
+            text-align: center;
+            background: #eef4f0;
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px dashed var(--primary-green);
+        }
+
+        #fact-text {
+            font-style: italic;
+            color: var(--secondary-green);
+            font-size: 1.15rem;
+            margin-bottom: 1.5rem;
+            min-height: 50px;
+        }
+
+        .interactive-btn {
+            background-color: var(--accent-orange);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.8rem;
+            font-size: 1rem;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.2s, transform 0.2s;
+            box-shadow: 0 4px 10px rgba(251, 133, 0, 0.3);
+        }
+
+        .interactive-btn:hover {
+            background-color: #e85d04;
+            transform: scale(1.05);
+        }
+
+        /* Creator Profile Section */
+        .creator-card {
+            background: linear-gradient(135deg, #1b4332, #2d6a4f);
+            color: white;
+            border-top: 4px solid var(--accent-yellow);
+        }
+
+        .creator-card h2 {
+            color: var(--accent-yellow);
+        }
+
+        .creator-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            align-items: center;
+            justify-content: center;
+            text-align: left;
+        }
+
+        .creator-avatar {
+            width: 130px;
+            height: 130px;
+            background-color: rgba(255, 255, 255, 0.15);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            border: 3px solid var(--accent-yellow);
+            flex-shrink: 0;
+        }
+
+        .creator-info {
+            flex: 1;
+            min-width: 240px;
+        }
+
+        .creator-info h3 {
+            margin: 0 0 0.5rem 0;
+            font-size: 1.5rem;
+            color: var(--accent-yellow);
+        }
+
+        .creator-skills {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .skill-tag {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.85rem;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2.5rem;
+            background-color: #112217;
+            color: white;
+            font-size: 0.95rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo">🇺🇬 Pearl of Africa</div>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#wonders">Wonders</a></li>
+            <li><a href="#culture">Culture & Food</a></li>
+            <li><a href="#facts">Fun Facts</a></li>
+            <li><a href="#creator">Creator</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header -->
+    <header>
+        <h1>Uganda</h1>
+        <p>Explore the Pearl of Africa</p>
+    </header>
+
+    <div class="container">
+        
+        <!-- Overview Card -->
+        <div class="card" id="about">
+            <h2>Welcome to Uganda</h2>
+            <p>Nestled in East Africa, Uganda is a land of breathtaking landscapes, diverse cultures, and incredible wildlife. From the snow-capped Rwenzori Mountains to the vast waters of Lake Victoria and the source of the mighty River Nile, it is a country gifted with unmatched natural beauty and warm-hearted people.</p>
+        </div>
+
+        <!-- Highlights Card -->
+        <div class="card" id="wonders">
+            <h2>Top Wonders & Wildlife</h2>
+            <div class="highlights-grid">
+                <div class="highlight-item">
+                    <h3>Mountain Gorillas</h3>
+                    <p>Home to nearly half of the world's remaining mountain gorillas, sheltered in the misty forests of Bwindi.</p>
+                </div>
+                <div class="highlight-item">
+                    <h3>Murchison Falls</h3>
+                    <p>Witness the dramatic power of the Nile as it forces its way through a narrow 7-meter gorge.</p>
+                </div>
+                <div class="highlight-item">
+                    <h3>The Source of the Nile</h3>
+                    <p>Located in Jinja, where the legendary river begins its long journey north to the Mediterranean Sea.</p>
+                </div>
+                <div class="highlight-item">
+                    <h3>Queen Elizabeth NP</h3>
+                    <p>Famous for its abundant wildlife, including tree-climbing lions in the Ishasha sector and scenic crater lakes.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Culture & Food Card (New Section Added!) -->
+        <div class="card" id="culture">
+            <h2>Culture & Cuisine</h2>
+            <p>Uganda features dozens of distinct indigenous cultures, vibrant traditional dances (like the energetic *Tubimmba* and *Entogoro*), and rich culinary traditions.</p>
+            <div class="highlights-grid">
+                <div class="highlight-item">
+                    <h3>Rolex (The Snack)</h3>
+                    <p>A famous Ugandan street food consisting of an omelette wrapped inside a soft chapati. Delicious and filling!</p>
+                </div>
+                <div class="highlight-item">
+                    <h3>Matooke</h3>
+                    <p>Steamed green bananas that are mashed and served as a staple accompaniment to savory stews and sauces.</p>
+                </div>
+                <div class="highlight-item">
+                    <h3>Music & Art</h3>
+                    <p>Traditional instruments like the *Endingidi* (tube fiddle) and vibrant storytelling traditions make Ugandan culture truly unique.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Photo Gallery Placeholder Section -->
+        <div class="card">
+            <h2>Photo Gallery</h2>
+            <p style="text-align: center; color: #666; margin-top: 0;">Add your Uganda images to your folder to display them here!</p>
+            <div class="gallery-grid">
+                <div class="photo-box">Gorillas in Bwindi [Photo 1]</div>
+                <div class="photo-box">Murchison Falls [Photo 2]</div>
+                <div class="photo-box">Source of the Nile [Photo 3]</div>
+                <div class="photo-box">Savanna Sunset [Photo 4]</div>
+            </div>
+        </div>
+
+        <!-- Interactive Fun Facts Section -->
+        <div class="card" id="facts">
+            <h2>Interactive Fun Facts</h2>
+            <div class="fact-container">
+                <p id="fact-text">Click the button below to discover an amazing fact about Uganda!</p>
+                <button class="interactive-btn" onclick="getNextFact()">Show Fun Fact 🌟</button>
+            </div>
+        </div>
+
+        <!-- Creator Profile Section -->
+        <div class="card creator-card" id="creator">
+            <h2>Meet the Creator</h2>
+            <div class="creator-content">
+                <div class="creator-avatar">👑</div>
+                <div class="creator-info">
+                    <h3>Nkosi Kwetana</h3>
+                    <p>Hello! I built this website as my very first web development project. I wanted to showcase the incredible beauty, culture, nature, and food of Uganda in a fun, interactive way. Thank you for checking out my site!</p>
+                    <div class="creator-skills">
+                        <span class="skill-tag">HTML5</span>
+                        <span class="skill-tag">CSS3</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">First Website</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>Built with passion and curiosity by Nkosi Kwetana.</p>
+    </footer>
+
+    <!-- JavaScript for the Interactive Fun Facts Button -->
+    <script>
+        const facts = [
+            "Winston Churchill nicknamed Uganda 'The Pearl of Africa' in 1908 because of its vibrant scenery, wonderful climate, and rich wildlife.",
+            "Uganda is home to the endangered Mountain Gorilla, hosting almost half of the entire global population in its national parks.",
+            "The source of the legendary River Nile—the longest river in the world—is located right in Jinja, Uganda.",
+            "Uganda has one of the youngest populations in the world, filled with vibrant culture, music, and welcoming people.",
+            "Bwindi Impenetrable National Park is a UNESCO World Heritage site that is over 25,000 years old!",
+            "The famous Ugandan street food called a 'Rolex' gets its name from 'roll eggs' because an egg omelette is rolled inside a chapati!"
+        ];
+
+        let currentFactIndex = 0;
+
+        function getNextFact() {
+            currentFactIndex = (currentFactIndex + 1) % facts.length;
+            const factElement = document.getElementById("fact-text");
+            
+            // Fade animation effect
+            factElement.style.opacity = 0;
+            setTimeout(() => {
+                factElement.textContent = `"${facts[currentFactIndex]}"`;
+                factElement.style.opacity = 1;
+            }, 150);
+        }
+    </script>
+
+</body>
+</html>
